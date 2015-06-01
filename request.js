@@ -5,7 +5,7 @@ var request = require('superagent');
 var cheerio = require('cheerio');
 var async = require("async");
 var PostModel = require("./model").ocNewsPost;
-var pages = 100;
+var pages = 300;
 
 PostModel.remove({}).exec(function(){
     async.timesSeries(pages, function(n, next){
