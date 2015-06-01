@@ -1,0 +1,13 @@
+{
+  "qiniuOption":{
+     "default":{
+        "baseUrl":"http://7xixv9.com1.z0.glb.clouddn.com",
+        "conf":{
+          "ACCESS_KEY":"kcGSqbTsCNkkqpj_GqSadETeaEczsEz7x2g_Tpo4",
+          "SECRET_KEY":"-KaUAjqqLU2LqduRrYdC2IC7FVxH2f42CRdOGkzY"
+        }
+     }
+  },
+  "dbUrl":"mongodb://localhost/ocNewsPost",
+  "dbOption":{}
+}
