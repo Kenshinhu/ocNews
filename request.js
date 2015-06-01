@@ -5,7 +5,7 @@ var request = require('superagent');
 var cheerio = require('cheerio');
 var async = require("async");
 var PostModel = require("./model").ocNewsPost;
-var pages = 300;
+var pages = 10;
 
 PostModel.remove({}).exec(function(){
     async.timesSeries(pages, function(n, next){
@@ -30,7 +30,8 @@ function newsRequest(n,fn){
 
             var $ = cheerio.load(res.text,{
                 normalizeWhitespace: true,
-                xmlMode: true
+                xmlMode: true,
+                decodeEntities: false
             });
 
             var tbody = $("tbody").find("tr");
@@ -70,7 +71,8 @@ function newsRequest(n,fn){
 
                                 var _ = cheerio.load(res.text,{
                                     normalizeWhitespace: true,
-                                    xmlMode: true
+                                    xmlMode: true,
+                                    decodeEntities: false
                                 });
 
 
