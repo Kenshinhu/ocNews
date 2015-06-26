@@ -5,21 +5,31 @@ var request = require('superagent');
 var cheerio = require('cheerio');
 var async = require("async");
 var PostModel = require("./model").ocNewsPost;
-var pages = 400;
+var pages = 600;
+
+var forum_ids = ['35','43','4'];
 
 PostModel.remove({}).exec(function(){
-    async.timesSeries(pages, function(n, next){
-        newsRequest(n,function(){
-            next();
+
+    async.forEachSeries(forum_ids,function(forum_id,nextForum){
+
+        async.timesSeries(pages, function(n, next){
+            newsRequest(forum_id,n,function(){
+                next();
+            });
+        }, function(err, users) {
+            nextForum();
         });
-    }, function(err, users) {
-        // we should now have 5 users
+
+    },function(err){
+
         console.log("complete");
+
     });
 });
 
 
-function newsRequest(n,fn){
+function newsRequest(forum_id,n,fn){
     var page = n;
 
     request
