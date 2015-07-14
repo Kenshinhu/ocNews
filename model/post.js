@@ -6,6 +6,7 @@ var s = m.Schema;
 
 var schema = new s({
     "title"    : String,
+    "forum_id" : String,
     "content"  : String,
     "createAt" : { type:Number , default: Date.now }
 });

@@ -18,6 +18,9 @@ PostModel.remove({}).exec(function(){
                 next();
             });
         }, function(err, users) {
+            if(err){
+                console.log("forum_id : %s page:n  Error:%s",forum_id,n,JSON.stringify(err,'','\t'));
+            }
             nextForum();
         });
 
@@ -33,10 +36,14 @@ function newsRequest(forum_id,n,fn){
     var page = n;
 
     request
-        .get('http://bbs.oncity.cc/forum-35-'+n+'.html')
+        .get('http://bbs.oncity.cc/forum-'+forum_id+'-'+n+'.html')
         .set('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
         .end(function(err, res){
             // Calling the end function will send the request
+
+            if(err){
+                fn(err);
+            }
 
             var $ = cheerio.load(res.text,{
                 normalizeWhitespace: true,
@@ -96,18 +103,16 @@ function newsRequest(forum_id,n,fn){
 
                                 var post = {
                                     "title":title,
+                                    "forum_id":forum_id,
                                     "content":_(message).html(),
                                     "createAt":(new Date(createDate)).getTime()/1000
                                 }
 
 
-                                //PostModel.create(post,next);
-
-                            //PostModel.model.create(post,next);
-                            PostModel.create(post,function(err){
-                                console.log("next");
-                                next();
-                            });
+                                PostModel.create(post,function(err){
+                                    console.log("next");
+                                    next();
+                                });
                             });
 
                 }else{
