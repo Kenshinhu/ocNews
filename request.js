@@ -7,7 +7,7 @@ var async = require("async");
 var PostModel = require("./model").ocNewsPost;
 var pages = 600;
 
-var forum_ids = ['35','43','4'];
+var forum_ids = ['4','35','43'];
 
 PostModel.remove({}).exec(function(){
 
