@@ -8,6 +8,8 @@ var PostModel = require("./model").ocNewsPost;
 var pages = 600;
 
 var forum_ids = ['6','4','35','43'];
+//
+//var forum_ids = ['6'];
 
 PostModel.remove({}).exec(function(){
 
@@ -55,7 +57,15 @@ function newsRequest(forum_id,n,fn){
 
             async.eachSeries(tbody,function(obj,next){
 
-                if(obj.name === "tr") {
+                //console.log($(obj).parent().attr("id"));
+
+                var tbody_id = $(obj).parent().attr("id");
+
+                if((typeof tbody_id) === "undefined" || tbody_id.indexOf("normalthread") === -1){
+                    next();
+                }else if(obj.name === "tr") {
+
+
                     console.log("page:" + page);
                     console.log("title:" + $(obj).find(".xst").text());
                     console.log("url:" + $(obj).find(".xst").attr("href"));
@@ -70,9 +80,14 @@ function newsRequest(forum_id,n,fn){
                         createDate = $(obj).find(".by").find("em").find("a").text();
                     }
 
+
+
+                    var tag = $(obj).find(".new").find("em").find("a").text();
+
                     console.log("postID:" + postId);
                     console.log("createDate:"+createDate);
                     console.log("unixtimeStamp:"+(new Date(createDate)).getTime()/1000);
+                    console.log("tag:%s",tag);
                     //console.log("BYhtml:"+$(obj).find(".by").find("em"));
                     console.log("--------");
 
@@ -104,6 +119,7 @@ function newsRequest(forum_id,n,fn){
                                 var post = {
                                     "title":title,
                                     "forum_id":forum_id,
+                                    "tag":tag,
                                     "content":_(message).html(),
                                     "createAt":(new Date(createDate)).getTime()/1000
                                 };
