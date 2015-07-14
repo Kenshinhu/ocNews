@@ -14,8 +14,8 @@ PostModel.remove({}).exec(function(){
     async.forEachSeries(forum_ids,function(forum_id,nextForum){
 
         async.timesSeries(pages, function(n, next){
-            newsRequest(forum_id,n,function(){
-                next();
+            newsRequest(forum_id,n,function(err){
+                next(err);
             });
         }, function(err, users) {
             if(err){
@@ -106,7 +106,7 @@ function newsRequest(forum_id,n,fn){
                                     "forum_id":forum_id,
                                     "content":_(message).html(),
                                     "createAt":(new Date(createDate)).getTime()/1000
-                                }
+                                };
 
 
                                 PostModel.create(post,function(err){
