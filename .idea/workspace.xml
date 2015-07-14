@@ -25,8 +25,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba24a29c-d18f-4f8a-bbfe-47189a56084d" name="Default" comment="修改刷新数量">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/post.js" afterPath="$PROJECT_DIR$/model/post.js" />
+    <list default="true" id="ba24a29c-d18f-4f8a-bbfe-47189a56084d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/request.js" afterPath="$PROJECT_DIR$/request.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -54,7 +53,7 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state vertical-scroll-proportion="-0.0">
                   <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
                   <folding />
                 </state>
@@ -94,8 +93,8 @@
           <file leaf-file-name="request.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/request.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.20952381">
-                  <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.5121693">
+                  <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
                   <folding />
                 </state>
               </provider>
@@ -118,8 +117,8 @@
           <file leaf-file-name="post.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/model/post.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.18624339">
-                  <caret line="8" column="8" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.32592592">
+                  <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -149,6 +148,7 @@
         <option value="$PROJECT_DIR$/model/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/model/post.js" />
+        <option value="$PROJECT_DIR$/router/boss_v1.js" />
         <option value="$PROJECT_DIR$/request.js" />
       </list>
     </option>
@@ -204,20 +204,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ocNews" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ocNews" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ocNews" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,7 +343,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436843169186</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修改刷新数量">
+      <created>1436844577496</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1436844577496</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -688,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/request.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20952381">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.5121693">
+          <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
           <folding />
         </state>
       </provider>
